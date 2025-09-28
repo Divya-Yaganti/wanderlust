@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <br><br>
+                <h3>Create New Listing</h3>
+                <br>
+                <form method="POST" action="/listings">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" placeholder="Enter Title" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" placeholder="Enter description"
+                            class="form-control"></textarea>
+                    </div>
+
+                    
+
+                    <div class="mb-3">
+                        <label for="image.filename" class="form-label">Image Filename</label>
+                        <input type="text" name="listing[image][filename]" placeholder="Enter Image filename"
+                            class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image.url" class="form-label">Image URL</label>
+                        <input type="text" name="listing[image][url]" placeholder="Enter Image URL"
+                            class="form-control" />
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="listing[price]" placeholder="Enter Price" class="form-control"
+                            required />
+                    </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" name="listing[location]" placeholder="Enter Location"
+                                class="form-control" required />
+                        </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" name="listing[country]" placeholder="Enter Country" class="form-control"
+                                required />
+                        </div>
+
+                    <button class="btn btn-dark add-btn">Add</button>
+                    <br><br>
+                    <br><br>
+                    
+                </form>
+            </div>
+        </div>
+    </body>
