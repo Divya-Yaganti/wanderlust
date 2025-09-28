@@ -111,3 +111,23 @@ body {
     border:none !important;
 
 }
+
+/* show page */
+.show-img{
+    height:30vh;
+}
+
+.btns{
+    display:flex;
+    
+}
+
+.btn{
+   background-color: #fe424d !important;
+    border:none !important;
+}
+
+.show-card{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
