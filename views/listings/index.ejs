@@ -17,7 +17,8 @@
                                 <b>
                                     <%= listing.title %> <br>
                                 </b>
-                                &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                                &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night
+
                             </p>
                         </div>
                     </div>
