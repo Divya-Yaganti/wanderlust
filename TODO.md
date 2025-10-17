@@ -1,7 +1,7 @@
-- [ ] Update Listing schema to include geometry field for coordinates
-- [ ] Install node-geocoder package
-- [ ] Update controllers/listings.js to add geocoding logic in createListing and updateListing
-- [ ] Update init/data.js to include coordinates for sample listings
-- [ ] Add map section to views/listings/show.ejs using Leaflet
-- [ ] Test geocoding for new listings
-- [ ] Test map display on show page
+- [ ] Remove map display section from views/listings/show.ejs
+- [ ] Remove Mapbox script includes from views/layouts/boilerplate.ejs
+- [ ] Remove geometry field from Listing schema in models/listing.js
+- [ ] Remove geocoding logic from controllers/listings.js in createListing and updateListing functions
+- [ ] Remove geometry properties from sample listings in init/data.js
+- [ ] Update TODO.md to remove map-related tasks
+- [ ] Remove node-geocoder from package.json

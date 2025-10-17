@@ -10,6 +10,10 @@ const sampleListings = [
     price: 1500,
     location: "Malibu",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-118.7798, 34.0259]
+    }
   },
   {
     title: "Modern Loft in Downtown",
@@ -22,6 +26,10 @@ const sampleListings = [
     price: 1200,
     location: "New York City",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-74.0060, 40.7128]
+    }
   },
   {
     title: "Mountain Retreat",
@@ -34,6 +42,10 @@ const sampleListings = [
     price: 1000,
     location: "Aspen",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-106.8175, 39.1911]
+    }
   },
   {
     title: "Historic Villa in Tuscany",
@@ -46,6 +58,10 @@ const sampleListings = [
     price: 2500,
     location: "Florence",
     country: "Italy",
+    geometry: {
+      type: "Point",
+      coordinates: [11.2558, 43.7696]
+    }
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -58,6 +74,10 @@ const sampleListings = [
     price: 800,
     location: "Portland",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-122.6784, 45.5152]
+    }
   },
   {
     title: "Beachfront Paradise",
@@ -70,6 +90,10 @@ const sampleListings = [
     price: 2000,
     location: "Cancun",
     country: "Mexico",
+    geometry: {
+      type: "Point",
+      coordinates: [-86.8515, 21.1619]
+    }
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -82,6 +106,10 @@ const sampleListings = [
     price: 900,
     location: "Lake Tahoe",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-120.0324, 39.0968]
+    }
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -94,6 +122,10 @@ const sampleListings = [
     price: 3500,
     location: "Los Angeles",
     country: "United States",
+    geometry: {
+      type: "Point",
+      coordinates: [-118.2437, 34.0522]
+    }
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -106,17 +138,21 @@ const sampleListings = [
     price: 3000,
     location: "Verbier",
     country: "Switzerland",
+    geometry: {
+      type: "Point",
+      coordinates: [7.2286, 46.0964]
+    }
   },
   {
     title: "Safari Lodge in the Serengeti",
     description:
-      "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
+      "Experience the thrill of the wild in this luxurious safari lodge in the Serengeti. Watch wildlife from your private deck.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNhdmFubmFofGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
-    price: 4000,
-    location: "Serengeti National Park",
+    price: 3200,
+    location: "Serengeti",
     country: "Tanzania",
   },
   {
