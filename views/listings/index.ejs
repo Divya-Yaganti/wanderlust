@@ -1,12 +1,65 @@
 <% layout("/layouts/boilerplate") %>
 
-    <body>
+   <style>
+    .filter{
+        margin-top: 1rem;
+        margin-left:1rem;
+        text-align: center;
+        opacity: 0.7;
+       
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor:pointer
+    }
+    #filters{
+         display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .taxinfo{
+    display: none;  
+    }
+
+    .tax-switch{
+        border:1px solid black;
+        border-radius: 1rem;
+        height:2.5rem;
+        padding:0.5rem;
+        display: flex;
+        align-items: center;
+    }
+   </style>
         
-        <h3>All listings</h3>
-        <!-- <form method="GET" action="/listings/new">
-        <button>Create New Listing</button>
-    </form> -->
-        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2">
+       
+       
+        <div  id="filters" >
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+        
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+        
+       
+            <div class="filter">
+                <div><i class="fa-solid fa-city"></i></div>
+                <p>Iconic Cities</p>
+            </div>
+
+            <div class="tax-switch ms-auto">
+                  <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                    <label class="form-check-label" for="switchCheckDefault">Display total after Taxes</label>
+                  </div>
+            </div>
+        </div>
+        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 mt-3">
+             <!-- <h3>All listings</h3> -->
             <% for(let listing of allListings){ %>
                 <a class="listing-link" href="/listings/<%= listing._id %>">
                     <div class="card col listing-card">
@@ -19,11 +72,26 @@
                                     <%= listing.title %> <br>
                                 </b>
                                 &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night
-
+                                <i class="taxinfo">  +18% GST </i>
+                                <br>
+                                <i class="taxinfo">Total Price(with tax): &#8377;<%= listing.price+(listing.price*18)/100 ? (listing.price+(listing.price*18)/100).toLocaleString("en-IN") : "N/A"%></i>
+                                
                             </p>
                         </div>
                     </div>
                 </a>
                 <% }%>
         </div>
-    </body>
+   <script>
+     let taxSwitch=document.getElementById('switchCheckDefault');
+     taxSwitch.addEventListener("click",()=>{
+        let taxinfo=document.getElementsByClassName('taxinfo');
+       for(info of taxinfo){
+        if(taxSwitch.checked){
+            info.style.display="inline";
+        }else{
+            info.style.display="none";
+        }
+       }
+    });
+   </script>

@@ -1,0 +1,7 @@
+- [ ] Update Listing schema to include geometry field for coordinates
+- [ ] Install node-geocoder package
+- [ ] Update controllers/listings.js to add geocoding logic in createListing and updateListing
+- [ ] Update init/data.js to include coordinates for sample listings
+- [ ] Add map section to views/listings/show.ejs using Leaflet
+- [ ] Test geocoding for new listings
+- [ ] Test map display on show page

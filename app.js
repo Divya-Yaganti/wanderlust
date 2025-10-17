@@ -1,3 +1,9 @@
+if(process.env.NODE_ENV!=="production")
+{
+    require('dotenv').config();
+}
+
+
 const express = require('express');
 const app = express();
 const ejsMate=require('ejs-mate');
@@ -18,6 +24,7 @@ const { reviewSchema } = require('./schema.js');
 //routes
 const listings=require("./routes/listing.js");
 const reviews=require("./routes/review.js");
+const user=require("./routes/user.js");
 // express sessions
 const session=require("express-session");
 //connect-flash(to pop meesages like listing added deleted etc)
@@ -65,20 +72,32 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get('/', (req, res) => {
-    //console.log(req.session);
-    res.send("root is working");
-});
+// app.get('/', (req, res) => {
+//     //console.log(req.session);
+//     res.send("root is working");
+// });
 
 app.use((req,res,next)=>{
      res.locals.success=req.flash("success");
      res.locals.error=req.flash("error");
+     res.locals.currentUser=req.user;
      next();
 });
 
+// app.get("/demouser",async(req,res)=>{
+//     let fakeUser=new User({
+//         email:"d@gmail.om",
+//         username:"yagan",
+//         });
+
+//     let registeredUser=await User.register(fakeUser,"123456");
+//     res.send(registeredUser);
+// });
+
+
 app.use("/listings",listings);
 app.use("/listings/:id/reviews",reviews);
-
+app.use("/user",user);
 
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
